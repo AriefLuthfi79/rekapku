@@ -1,0 +1,23 @@
+.login-box
+  = form_for :session, url: session_path, html: { class: "login-form" } do |f|
+    h3.login-head
+      = fa_icon "user", class: "fa-lg fa-fw"
+      | SIGN IN
+    .form-group
+      = f.label :email, class: "control-label"
+      = f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true
+    .form-group
+      = f.label :password, class: "control-label"
+      = f.password_field :password, class: "form-control", placeholder: "Password"
+    .form-group
+      .utility
+        .animated-checkbox
+          label
+            = f.check_box :remember_me
+            span.label-text Stay signed in?
+        p.semibold-text.mb-2
+          = link_to "Forgot password?", "#", data: { toggle: 'flip' }
+    .form-group.btn-container
+      = button_tag(type: "submit", class: "btn btn-primary btn-block") do
+        = fa_icon "sign-in", class: "fa-lg fa-fw"
+        | SIGN IN

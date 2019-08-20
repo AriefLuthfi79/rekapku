@@ -1,0 +1,67 @@
+header.app-header
+  = link_to "POS App", "#", class: "app-header__logo"
+  a.app-sidebar__toggle(href="#" data-toggle="sidebar")
+  ul.app-nav
+    li.app-search
+      = text_field nil, nil, class: "app-search__input", type: 'search', placeholder: "Search"
+      = button_tag class: "app-search__button", type: nil do
+        = fa_icon "search"
+
+    li.dropdown
+      = link_to "#", class: "app-nav__item", data: { toggle: 'dropdown' }, 'aria-label' => "Show notifications" do
+        = fa_icon "bell", class: "fa-lg"
+      ul.app-notification.dropdown-menu.dropdown-menu-right
+        li.app-notification__title You have 2 new notifications
+        .app-notification__content
+          li
+            = link_to "javascript:;", class: "app-notification__item" do
+              span.app-notification__icon
+                span.fa-stack.fa-lg
+                  i.fa.fa-circle.fa-stack-2x.text-primary
+                  i.fa.fa-envelope.fa-stack-1x.fa-inverse
+              div
+                p.app-notification__message Lisa sent you a mail
+                p.app-notification__meta 2 min ago
+          li
+            = link_to "javascript:;", class: "app-notification__item" do
+              span.app-notification__icon
+                span.fa-stack.fa-lg
+                  i.fa.fa-circle.fa-stack-2x.text-danger
+                  i.fa.fa-hdd-o.fa-stack-1x.fa-inverse
+              div
+                p.app-notification__message Mail server not working
+                p.app-notification__meta 5 min ago
+          li
+            = link_to "javascript:;", class: "app-notification__item" do
+              span.app-notification__icon
+                span.fa-stack.fa-lg
+                  i.fa.fa-circle.fa-stack-2x.text-primary
+                  i.fa.fa-envelope.fa-stack-1x.fa-inverse
+              div
+                p.app-notification__message Lisa sent you a mail
+                p.app-notification__meta 2 min ago
+          li
+            = link_to "javascript:;", class: "app-notification__item" do
+              span.app-notification__icon
+                span.fa-stack.fa-lg
+                  i.fa.fa-circle.fa-stack-2x.text-danger
+                  i.fa.fa-hdd-o.fa-stack-1x.fa-inverse
+              div
+                p.app-notification__message Mail server not working
+                p.app-notification__meta 5 min ago
+
+        li.app-notification__footer
+          = link_to "See all notification", "#"
+
+    li.dropdown
+      = link_to "#", class: "app-nav__item", data: { toggle: 'dropdown' }, 'aria-label' => "Open Profile Menu" do
+        = fa_icon "user", class: "fa-lg"
+      ul.dropdown-menu.settings-menu.dropdown-menu-right
+        li
+          = link_to "#", class: "dropdown-item" do
+            = fa_icon "user", class: "fa-lg"
+            | Profile
+        li
+          = link_to "#", class: "dropdown-item", method: :delete do
+            = fa_icon "sign-out", class: "fa-lg"
+            | Logout/Notification Menu

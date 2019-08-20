@@ -1,0 +1,14 @@
+= content_for :title do
+  | Category |
+
+.app-title
+  div
+    h1
+      = fa_icon 'th-list', text: "Category"
+    p Category page for rekapku
+  ul.app-breadcrumb.breadcrumb
+    li.breadcrumb-item
+      = fa_icon "home lg"
+    li.breadcrumb-item
+      = link_to categories_path do
+        | Category

@@ -1,0 +1,8 @@
+doctype html
+html
+  == render 'shared/head'
+  body.app.sidebar-mini.rtl
+    = render 'shared/header'
+    = render 'shared/sidebar'
+    main.app-content
+      = yield

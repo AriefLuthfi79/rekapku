@@ -1,0 +1,58 @@
+.app-sidebar__overlay[data-toggle="sidebar"]
+aside.app-sidebar
+  .app-sidebar__user
+    = image_tag 'https://secure.gravatar.com/avatar/123?s=80', alt: 'User image', class: "app-sidebar__user-avatar"
+    div
+      p.app-sidebar__user-name Arief Luthfi
+      p.app-sidebar__user-designation Ruby Developer
+  ul.app-menu
+    li.header Admin Navigation
+    li
+      = link_to dashboards_path, class: class_active(dashboards_path) do
+        = fa_icon "dashboard", class: 'app-menu__icon'
+        span.app-menu__label Dashboard
+    li
+      = link_to categories_path, class: class_active(categories_path) do
+        = fa_icon 'th-list', class: 'app-menu__icon'
+        span.app-menu__label Category
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon 'cubes', class: 'app-menu__icon'
+        span.app-menu__label Product
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "credit-card", class: 'app-menu__icon'
+        span.app-menu__label Member
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "truck", class: 'app-menu__icon'
+        span.app-menu__label Supplier
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "money", class: 'app-menu__icon'
+        span.app-menu__label Pengeluaran
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "user", class: 'app-menu__icon'
+        span.app-menu__label User
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "upload", class: 'app-menu__icon'
+        span.app-menu__label Penjualan
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "download", class: 'app-menu__icon'
+        span.app-menu__label Pembelian
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "gears", class: 'app-menu__icon'
+        span.app-menu__label Settings
+    li.header Cashier Navigation
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "shopping-cart", class: 'app-menu__icon'
+        span.app-menu__label Transaksi
+    li
+      = link_to "#", class: 'app-menu__item' do
+        = fa_icon "plus", class: 'app-menu__icon'
+        span.app-menu__label Transaksi Baru

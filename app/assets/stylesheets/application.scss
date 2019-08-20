@@ -1,0 +1,46 @@
+@import "font-awesome";
+@import "tools/fonts";
+@import "tools/vars";
+@import "tools/customize-bootstrap";
+@import "bootstrap";
+
+// Vendor files
+
+@import "tools/pace";
+@import "tools/jqvmap";
+//BASICS
+//---------------------------------------------------
+
+// This styles are essential for theme
+@import 'basics/app';
+@import 'basics/helpers';
+
+// Component
+//---------------------------------------------------
+
+@import 'components/header';
+@import 'components/sidebar';
+@import 'components/sidebar-mini';
+
+// This styles are optional based on your preferance
+@import 'components/dropdown';
+@import 'components/button';
+@import 'components/app-title';
+@import 'components/tile';
+@import 'components/custom-radio-n-checkbox';
+@import 'components/toggle-button';
+@import 'components/material-half-bg';
+@import 'components/material-loader';
+@import 'components/button-spinner';
+@import 'components/widgets';
+@import 'components/chat';
+
+// Pages
+//---------------------------------------------------
+
+// This styles are optional based on your preferance
+@import 'pages/login-material';
+@import 'pages/lockscreen-material';
+@import 'pages/error-page';
+@import 'pages/mailbox';
+@import 'pages/user-profile';
