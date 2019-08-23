@@ -1,6 +1,6 @@
 header.app-header
-  = link_to "POS App", "#", class: "app-header__logo"
-  a.app-sidebar__toggle(href="#" data-toggle="sidebar")
+  = link_to "Rekapku App", "#", class: "app-header__logo"
+  a.app-sidebar__toggle[href="#" data-toggle="sidebar"]
   ul.app-nav
     li.app-search
       = text_field nil, nil, class: "app-search__input", type: 'search', placeholder: "Search"
@@ -64,4 +64,4 @@ header.app-header
         li
           = link_to "#", class: "dropdown-item", method: :delete do
             = fa_icon "sign-out", class: "fa-lg"
-            | Logout/Notification Menu
+            | Logout
