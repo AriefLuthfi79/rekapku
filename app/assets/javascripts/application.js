@@ -6,6 +6,5 @@
 //= require pace/pace
 //= require bootstrap
 //= require turbolinks
-//= require main
 //= require_tree .
 

@@ -1,7 +1,12 @@
 class Admin::CategoriesController < ApplicationController
   before_action :authenticate_user!
 
-  def new; end
+  def index
+    @category = Category.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
-  def index; end
 end

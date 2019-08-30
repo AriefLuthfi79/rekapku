@@ -5,10 +5,25 @@
   div
     h1
       = fa_icon 'th-list', text: "Category"
-    p Category page for rekapku
   ul.app-breadcrumb.breadcrumb
     li.breadcrumb-item
       = fa_icon "home lg"
     li.breadcrumb-item
       = link_to categories_path do
         | Category
+button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalCreate"
+  = fa_icon "plus"
+  | New Category
+
+div class="modal fade" id="modalCreate" role="dialog" aria-labelledby="modalCreate" aria-hidden="true"
+  div class="modal-dialog" role="document"
+    div class="modal-content"
+      div class="modal-header"
+        h5 class="modal-title" id="modalCreate" New Category
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times
+      div class="modal-body"
+        
+      div class="modal-footer"
+        button class="btn btn-secondary" data-dismiss="modal" type="button" Close
+        button class="btn btn-primary" type="button" Save Changes

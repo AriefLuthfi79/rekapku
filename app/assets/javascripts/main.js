@@ -1,10 +1,11 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load' ,function () {
   var treeviewMenu = $('.app-menu');
 
   // Toggle Sidebar
   $('[data-toggle="sidebar"]').click(function(event) {
     event.preventDefault();
     $('.app').toggleClass('sidenav-toggled');
+    $('li.header').toggle();
   });
 
   // Activate sidebar treeview toggle
@@ -20,6 +21,6 @@ $(document).ready(function () {
   $("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
 
   //Activate bootstrip tooltips
+	  
   $("[data-toggle='tooltip']").tooltip();
-
 });
