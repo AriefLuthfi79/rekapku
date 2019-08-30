@@ -3,10 +3,16 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @category = Category.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
+  def create
+    category = Category.new(category_params)
+    category.save
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name)
+  end
 end

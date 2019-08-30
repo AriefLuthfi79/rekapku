@@ -10,4 +10,5 @@ Rekapku::Application.routes.draw do
 
   # Category page
   get '/categories', to: "admin/categories#index"
+  post '/categories', to: "admin/categories#create"
 end
