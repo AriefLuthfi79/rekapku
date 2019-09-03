@@ -20,7 +20,8 @@ module Rekapku
 
     config.generators.system_tests = nil
     config.generators do |g|
-      g.javascript_engine = :js
+      g.javascript_engine :js
+      g.scaffold_stylesheet false
     end
   end
 end

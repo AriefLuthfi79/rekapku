@@ -7,7 +7,6 @@ RSpec.feature "Category Features" do
     scenario "successfully" do
       sign_in user
       create_category
-
     end
   end
 end

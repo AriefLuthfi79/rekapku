@@ -3,11 +3,12 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @category = Category.new
+    @categories = Category.all
   end
 
   def create
-    category = Category.new(category_params)
-    category.save
+    @category = Category.new(category_params)
+    @category.save
   end
 
   private

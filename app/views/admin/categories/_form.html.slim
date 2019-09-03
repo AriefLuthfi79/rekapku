@@ -1,4 +1,17 @@
-= form_for category do |f|
-  div.form-group
-    = f.label :name
-    = f.text_field :name, class: "form-control", placeholder: "Name Category"
+= form_for category, method: :post, remote: true, class: "my-form" do |f|
+  div class="modal-header"
+    h5 class="modal-title" id="modalCreate" New Category
+    button type="button" class="close" data-dismiss="modal" aria-label="Close"
+      span aria-hidden="true" &times
+
+  div class="modal-body"
+    div.row
+      div.col-md-12
+        div.tile-body
+          div.form-group
+            = f.label :name
+            = f.text_field :name, class: "form-control", placeholder: "Name Category"
+
+  div class="modal-footer"
+    button class="btn btn-secondary" data-dismiss="modal" type="button" Close
+    = f.submit "Save changes", class: "btn btn-primary"
