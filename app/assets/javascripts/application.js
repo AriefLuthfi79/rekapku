@@ -1,8 +1,8 @@
-//= require jquery3
 //= require activestorage
 //= require turbolinks
-//= require popper
+//= require jquery3
 //= require jquery_ujs
+//= require popper
 //= require pace/pace
 //= require bootstrap
 //= require_tree .

@@ -1,1 +1,6 @@
-console.log("Hello World")
+<% if @category.persisted? %>
+  $('.category').append("<tr><%= j render @category %></tr>");
+  $('#modal-category').modal('toggle');
+<% end%>
+
+$('.modal-body').prepend("<%= j(render 'shared/error_message', object: @category) if @category.errors.any? %>");

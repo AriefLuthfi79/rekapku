@@ -1,0 +1,12 @@
+tr
+	td = category.id
+	td = category.name
+	td
+		div
+			= link_to admin_category_path(category), method: :delete, data: { confirm: "Are You sure?" } do
+				= fa_icon "trash"
+
+			= " | "
+			
+			= link_to edit_admin_category_path(category), action: "edit", remote: true do 
+				= fa_icon 'eye'

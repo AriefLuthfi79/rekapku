@@ -11,10 +11,23 @@
     li.breadcrumb-item
       = link_to categories_path do
         | Category
-button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalCreate"
-  = fa_icon "plus"
-  | New Category
-hr
-= render partial: "modal"
 
-= render partial: "table_categories"
+= link_to new_category_path, remote: true, class: "btn btn-info" do
+  = fa_icon 'plus'
+  | New Category
+
+hr
+
+div class="modal fade" id="modal-category" role="dialog" aria-labelledby="modal-category" aria-hidden="true"
+
+div.tile
+  h3.title-tile All Categories
+  .table-responsive
+    table class="table category"
+      thead
+        tr
+          th ID
+          th Name
+          th Action
+      tbody.category_index
+        = render @categories

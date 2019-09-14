@@ -1,0 +1,7 @@
+div class="alert alert-danger"
+  button type="button" class="close" data-dismiss="alert" aria-label="Close"
+    span aria-hidden="true" &times
+  h3 class="alert-heading" Seems Error
+  ul
+    - object.errors.full_messages.each do |error|
+      li = error
