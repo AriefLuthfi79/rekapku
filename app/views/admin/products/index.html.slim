@@ -1,0 +1,39 @@
+= content_for :title do
+	| Product |
+
+.app-title
+	div
+		h1
+			= fa_icon "cubes", text: "Product"
+	ul.app-breadcrumb.breadcrumb
+		li.breadcrumb-item
+			= fa_icon "home lg"
+		li.breadcrumb-item
+			= link_to products_path do
+				| Product
+
+= link_to new_product_path, remote: true, class: 'btn btn-info' do
+	= fa_icon 'plus'
+	| New Product
+
+hr
+
+div class="modal fade" id="modal-product" role="dialog" aria-labelledby="modal-product" aria-hidden="true"
+
+.row
+	.col-md-12
+		.tile
+			.tile-body
+				.table-responsive
+					= content_tag :table, role: :datatable, data: { url: products_path(format: :json) }, class: "table table-hover table-bordered", id: "product-datatable"
+						thead
+							tr
+								th ID
+								th Product Code
+								th Product Name
+								th Merk
+								th Category
+								th Stock
+								th Discount
+								th Price
+								th Action

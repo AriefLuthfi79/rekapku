@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require "rails"
+require "kaminari"
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"

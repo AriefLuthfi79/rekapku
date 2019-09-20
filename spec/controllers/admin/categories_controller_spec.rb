@@ -5,8 +5,12 @@ RSpec.describe Admin::CategoriesController, type: :controller do
   let(:valid_params) { { category: { name: "Barang Pecah" } } }
   let(:invalid_params) { { category: { name: nil } } }
 
-
   before { subject.send(:log_in, user) }
+
+  describe "GET #index" do
+    before { get :index }
+    it { expect(response).to render_template :index }
+  end
 
   describe "POST #create" do
     context 'with passing params' do
@@ -47,11 +51,25 @@ RSpec.describe Admin::CategoriesController, type: :controller do
 
   describe "PATCH #update" do
     context "with passing params" do
-      it "will rendering index" do
+      it "will redirect to index" do
         category = Category.create! name: "Testing"
-        patch :update, params: { id: category.to_param, category: valid_params }
-        expect(response).to redirect_to categories_path
+        patch :update, params: { id: category.to_param, category: valid_params }, xhr: true
+        expect(response).to redirect_to categories_path 
       end
+    end
+  end
+
+  describe "GET #edit" do
+    it 'assigns the requested category' do
+      category = create :category
+      get :edit, params: { id: category.to_param }, xhr: true
+      expect(assigns(:category)).to eq category
+    end
+
+    it "will rendering edit" do
+      category = create :category
+      get :edit, params: { id: category.to_param }, xhr: true
+      expect(response).to render_template :edit
     end
   end
 end

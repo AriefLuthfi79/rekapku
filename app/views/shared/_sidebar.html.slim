@@ -16,7 +16,7 @@ aside.app-sidebar
         = fa_icon 'th-list', class: 'app-menu__icon'
         span.app-menu__label Category
     li
-      = link_to "#", class: 'app-menu__item' do
+      = link_to products_path, class: class_active(products_path) do
         = fa_icon 'cubes', class: 'app-menu__icon'
         span.app-menu__label Product
     li

@@ -15,7 +15,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'slim-rails'
 gem 'bootstrap'
 gem 'font-awesome-rails'
-
+gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+gem 'kaminari'
+gem 'jbuilder'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
