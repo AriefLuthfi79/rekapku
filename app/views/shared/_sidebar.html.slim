@@ -8,15 +8,15 @@ aside.app-sidebar
   ul.app-menu
     li.header Admin Navigation
     li
-      = link_to dashboards_path, class: class_active(dashboards_path) do
+      = link_to dashboards_url, class: class_active(dashboards_path) do
         = fa_icon "dashboard", class: 'app-menu__icon'
         span.app-menu__label Dashboard
     li
-      = link_to categories_path, class: class_active(categories_path) do
+      = link_to categories_url, class: class_active(categories_path) do
         = fa_icon 'th-list', class: 'app-menu__icon'
         span.app-menu__label Category
     li
-      = link_to products_path, class: class_active(products_path) do
+      = link_to products_url, class: class_active(products_path) do
         = fa_icon 'cubes', class: 'app-menu__icon'
         span.app-menu__label Product
     li

@@ -25,7 +25,7 @@ div class="modal fade" id="modal-product" role="dialog" aria-labelledby="modal-p
 		.tile
 			.tile-body
 				.table-responsive
-					= content_tag :table, role: :datatable, data: { url: products_path(format: :json) }, class: "table table-hover table-bordered", id: "product-datatable"
+					= content_tag :table, role: :datatable, data: { url: products_url(format: :json) }, class: "table table-hover table-bordered", id: "product-datatable"
 						thead
 							tr
 								th ID

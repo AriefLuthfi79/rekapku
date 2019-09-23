@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_product, only: [:edit, :update, :destroy]
 
 	def index
 		respond_to do |format|
@@ -13,9 +14,11 @@ class Admin::ProductsController < ApplicationController
 		@product.save
 	end
 
+	def edit; end
+
 	def new
 		@product = Product.new
-		@categories = mapping_category
+		@categories = mapping_categories
 	end
 
 	private
@@ -32,7 +35,11 @@ class Admin::ProductsController < ApplicationController
 		)
 	end
 
-	def mapping_category
+	def set_product
+		@product = Product.find(params[:id])
+	end
+
+	def mapping_categories
 		Category.all.map { |category| [category.name, category.id] }
 	end
 end
