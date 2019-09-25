@@ -14,7 +14,9 @@ class Admin::ProductsController < ApplicationController
 		@product.save
 	end
 
-	def edit; end
+	def edit
+		@categories = mapping_categories
+	end
 
 	def new
 		@product = Product.new
