@@ -36,4 +36,23 @@ RSpec.describe Admin::ProductsController, type: :controller do
 			expect(response).to render_template :edit
  		end
 	end
+
+	describe "PATCH #update" do
+		context "with passing params" do
+			it "will redirect to index" do
+				product = create :product
+				patch :update, params: { id: product.to_param, product: valid_params }, xhr: true
+				expect(response).to render_template :update
+			end
+		end
+	end
+
+	describe "DELETE #destroy" do
+		it "will be destroy product object" do
+			product = Product.create!(valid_params)
+			expect {
+				delete :destroy, params: { id: product.to_param }
+			}.to change(Product, :count).by(-1)
+		end
+	end
 end

@@ -1,0 +1,7 @@
+<% if @product %>
+	var table = $('#product-datatable').DataTable();
+	table.ajax.reload();
+	$('#modal-product').modal('toggle');
+<% end %>
+
+$('.modal-body').prepend("<%= j(render 'shared/error_message', object: @product) if @product.errors.any? %>");

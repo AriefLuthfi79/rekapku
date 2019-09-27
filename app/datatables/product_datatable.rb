@@ -1,6 +1,7 @@
 class ProductDatatable < ApplicationDatatable	
 	delegate :number_to_currency, to: :@view
 	delegate :edit_product_path, to: :@view
+	delegate :product_path, to: :@view
 
 	private
 
@@ -17,9 +18,8 @@ class ProductDatatable < ApplicationDatatable
 				column << number_to_currency(product.price, locale: :id)
 
 				links = []
-				links << link_to(fa_icon('eye'), edit_product_path(product), remote: true)
-				links << link_to(fa_icon('pencil'), '#')
-				links << link_to(fa_icon('trash'), '#')
+				links << link_to(fa_icon('pencil'), edit_product_path(product), remote: true)
+				links << link_to(fa_icon('trash'), product_path(product), remote: true, method: :delete)
 				column << links.join(' | ')
 			end
 		end

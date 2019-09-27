@@ -23,6 +23,15 @@ class Admin::ProductsController < ApplicationController
 		@categories = mapping_categories
 	end
 
+	def update
+		@product.update(product_params)
+	end
+
+	def destroy
+		@product.destroy
+		redirect_to products_url
+	end
+
 	private
 
 	def product_params

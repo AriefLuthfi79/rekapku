@@ -12,7 +12,8 @@ div class="modal-dialog" role="document"
 			        div.tile-body
 			          div.form-group
 			            = f.label :product_code
-			            = f.text_field :product_code, class: "form-control", placeholder: "Product Code"
+			            button type="button" class="btn btn-info float-right code" Generate Code
+			            = f.text_field :product_code, class: "form-control", id: "productCode", placeholder: "Product Code"
 			          div.form-group
 			            = f.label :product_name
 			            = f.text_field :product_name, class: "form-control", placeholder: "Product Name"
