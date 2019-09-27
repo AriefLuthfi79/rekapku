@@ -19,7 +19,13 @@ class ProductDatatable < ApplicationDatatable
 
 				links = []
 				links << link_to(fa_icon('pencil'), edit_product_path(product), remote: true)
-				links << link_to(fa_icon('trash'), product_path(product), remote: true, method: :delete)
+				links << link_to(
+													fa_icon('trash'),
+													product_path(product),
+													remote: true,
+													method: :delete,
+													data: {confirm: "Are you sure?"}
+												)
 				column << links.join(' | ')
 			end
 		end
@@ -41,7 +47,7 @@ class ProductDatatable < ApplicationDatatable
 	end
 
 	def columns
-		%w(id product_code product_name merk stock discount price)
+		%w(id product_code product_name merk category_id stock discount price)
 	end
 
 	def count
