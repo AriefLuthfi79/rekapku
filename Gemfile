@@ -4,7 +4,7 @@ ruby '2.5.3'
 
 gem 'rails', '~> 5.2.3'
 gem 'mysql2'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.5'
 gem 'sass-rails', '~> 5.0'
 gem 'sprockets-rails'
 gem 'uglifier', '>= 1.3.0'
